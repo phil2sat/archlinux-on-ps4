@@ -21,7 +21,7 @@ jobs:
           sudo python3 reflector-2023/Reflector.py --latest 5 --sort rate --save mirrorlist
 
       - name: Download Arch Linux
-        run: https://ftp.u-strasbg.fr/linux/distributions/archlinux/iso/latest/archlinux-bootstrap-x86_64.tar.zst
+        run: wget https://geo.mirror.pkgbuild.com/iso/latest/archlinux-bootstrap-x86_64.tar.zst
 
       - name: Install dependencies
         run: |
