@@ -21,12 +21,12 @@ jobs:
           sudo python3 reflector-2023/Reflector.py --latest 5 --sort rate --save mirrorlist
 
       - name: Download Arch Linux
-        run: wget https://www.mirrorservice.org/sites/ftp.archlinux.org/iso/latest/archlinux-bootstrap-x86_64.tar.gz
+        run: https://ftp.u-strasbg.fr/linux/distributions/archlinux/iso/latest/archlinux-bootstrap-x86_64.tar.zst
 
       - name: Install dependencies
         run: |
           sudo mkdir archlinux
-          sudo tar --numeric-owner --strip-components=1 -xpf archlinux-bootstrap-x86_64.tar.gz -C archlinux
+          sudo tar --numeric-owner --strip-components=1 -xpf archlinux-bootstrap-x86_64.tar.zst -C archlinux
 
           sudo cp /etc/resolv.conf archlinux/etc
           sudo cp mirrorlist archlinux/etc/pacman.d/mirrorlist
