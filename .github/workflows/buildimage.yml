@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Download Reflector
         run: wget https://xyne.dev/projects/reflector/src/reflector-2023.tar.xz
@@ -44,10 +44,10 @@ jobs:
           sed -i 's/#en_GB.UTF-8 UTF-8/en_GB.UTF-8 UTF-8/g' /etc/locale.gen
           locale-gen
 
-          echo "LANG=en_GB.UTF-8" >> /etc/locale.conf
-          echo "KEYMAP=uk" >> /etc/vconsole.conf
-          echo "playstation" >> /etc/hostname
-          ln -sf /usr/share/zoneinfo/Europe/London /etc/localetime
+          echo "LANG=de_DE.UTF-8" >> /etc/locale.conf
+          echo "KEYMAP=de" >> /etc/vconsole.conf
+          echo "linux-ps4" >> /etc/hostname
+          ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localetime
 
           cat >> /etc/pacman.conf << "EOF"
           [multilib]
@@ -64,10 +64,10 @@ jobs:
 
           mkdir -p /lib/firmware/edid
 
-          useradd -m pi -G wheel
-          passwd pi
-          raspberry
-          raspberry
+          useradd -m phil2sat -G wheel
+          passwd changeme
+          changeme
+          changeme
 
           pacman-key --init
           pacman-key --populate archlinux
@@ -81,7 +81,7 @@ jobs:
           echo '%wheel ALL=(ALL:ALL) NOPASSWD: ALL' >> /etc/sudoers
           echo 'Defaults lecture="never"' >> /etc/sudoers
 
-          su pi
+          su phil2sat
           cd ~/
           touch ~/.sudo_as_admin_successful
 
