@@ -65,7 +65,7 @@ jobs:
           mkdir -p /lib/firmware/edid
 
           useradd -m phil2sat -G wheel
-          passwd changeme
+          passwd phil2sat
           changeme
           changeme
 
