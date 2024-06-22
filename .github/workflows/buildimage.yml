@@ -91,6 +91,8 @@ jobs:
           cd ..
           exit
 
+          sleep 120
+
           sudo tar -cpJf psxitarch.tar.xz --exclude /psxitarch.tar.xz --one-file-system /
           EOT
 
