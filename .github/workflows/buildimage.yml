@@ -64,8 +64,8 @@ jobs:
 
           mkdir -p /lib/firmware/edid
 
-          useradd -m phil2sat -G wheel
-          passwd phil2sat
+          useradd -m sony -G wheel
+          passwd sony
           changeme
           changeme
 
