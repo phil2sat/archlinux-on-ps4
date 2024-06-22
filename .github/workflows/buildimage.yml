@@ -91,9 +91,14 @@ jobs:
           cd ..
           exit
 
-          sleep 120
-
+          set -e
           sudo tar -cpJf psxitarch.tar.xz --exclude /psxitarch.tar.xz --one-file-system /
+          exitcode=$?
+
+          if [ "$exitcode" != "1" ] && [ "$exitcode" != "0" ]; then
+              exit $exitcode
+          fi
+          set -e
           EOT
 
           sudo umount -l archlinux/proc/
